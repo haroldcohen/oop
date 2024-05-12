@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "oop"
+version = "0.1.0"
+description = "Examples of actual Object Oriented Programming"
+authors = ["Harold Cohen <me@harold-cohen.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.testing.dependencies]
+pytest = "^8.2.0"
+
+
+[tool.poetry.group.linting.dependencies]
+pylint = "^3.1.0"
+black = "^24.4.2"
+pre-commit = "^3.7.1"
+autopep8 = "^2.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
