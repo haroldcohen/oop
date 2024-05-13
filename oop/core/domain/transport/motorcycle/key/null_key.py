@@ -1,4 +1,4 @@
-from oop.core.domain.vehicle.motorcycle.key.interface import MotorcycleKeyInterface
+from oop.core.domain.transport.motorcycle.key.interface import MotorcycleKeyInterface
 
 
 class NullMotorcycleKey(MotorcycleKeyInterface):

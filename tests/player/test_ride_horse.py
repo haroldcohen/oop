@@ -9,10 +9,10 @@ from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
 from oop.core.domain.player.rider.horse.model import HorseRider
 from oop.core.domain.player.riding.context import RidingContext
 from oop.core.domain.player.riding.strategies.horse import RideHorseStrategy
-from oop.core.domain.vehicle.horse.dto import HorseDTO
-from oop.core.domain.vehicle.horse.equipment.saddle.dto import SaddleDTO
-from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
-from oop.core.domain.vehicle.horse.model import Horse
+from oop.core.domain.transport.horse.dto import HorseDTO
+from oop.core.domain.transport.horse.equipment.saddle.dto import SaddleDTO
+from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
+from oop.core.domain.transport.horse.model import Horse
 
 
 @dataclass(frozen=True)

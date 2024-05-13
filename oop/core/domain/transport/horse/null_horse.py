@@ -1,8 +1,8 @@
 from uuid import UUID
 
-from oop.core.domain.vehicle.horse.dto import HorseDTO
-from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
-from oop.core.domain.vehicle.horse.interface import HorseInterface
+from oop.core.domain.transport.horse.dto import HorseDTO
+from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
+from oop.core.domain.transport.horse.interface import HorseInterface
 
 
 class NullHorse(HorseInterface):

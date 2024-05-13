@@ -9,8 +9,8 @@ from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
 from oop.core.domain.player.rider.bicycle.model import BicycleRider
 from oop.core.domain.player.riding.context import RidingContext
 from oop.core.domain.player.riding.strategies.bicycle import RideBicycleStrategy
-from oop.core.domain.vehicle.bicycle.dto import BicycleDTO
-from oop.core.domain.vehicle.bicycle.model import Bicycle
+from oop.core.domain.transport.bicycle.dto import BicycleDTO
+from oop.core.domain.transport.bicycle.model import Bicycle
 
 
 @dataclass(frozen=True)

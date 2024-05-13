@@ -1,12 +1,12 @@
 from uuid import UUID
 
-from oop.core.domain.vehicle.horse.dto import HorseDTO
-from oop.core.domain.vehicle.horse.equipment.saddle.interface import SaddleInterface
-from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
-from oop.core.domain.vehicle.horse.equipment.saddle.null_saddle import NullSaddle
-from oop.core.domain.vehicle.horse.interface import HorseInterface
-from oop.core.domain.vehicle.null_rider_id import NullRiderId
-from oop.core.domain.vehicle.rideable_interface import RideableInterface
+from oop.core.domain.transport.horse.dto import HorseDTO
+from oop.core.domain.transport.horse.equipment.saddle.interface import SaddleInterface
+from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
+from oop.core.domain.transport.horse.equipment.saddle.null_saddle import NullSaddle
+from oop.core.domain.transport.horse.interface import HorseInterface
+from oop.core.domain.transport.null_rider_id import NullRiderId
+from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
 class Horse(HorseInterface, RideableInterface):

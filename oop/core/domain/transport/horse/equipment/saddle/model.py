@@ -1,7 +1,7 @@
 from uuid import UUID
 
-from oop.core.domain.vehicle.horse.equipment.saddle.dto import SaddleDTO
-from oop.core.domain.vehicle.horse.equipment.saddle.interface import SaddleInterface
+from oop.core.domain.transport.horse.equipment.saddle.dto import SaddleDTO
+from oop.core.domain.transport.horse.equipment.saddle.interface import SaddleInterface
 
 
 class Saddle(SaddleInterface):

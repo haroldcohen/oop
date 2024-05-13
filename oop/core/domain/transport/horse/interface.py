@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from oop.core.domain.vehicle.horse.dto import HorseDTO
-from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
+from oop.core.domain.transport.horse.dto import HorseDTO
+from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
 
 
 class HorseInterface(ABC):

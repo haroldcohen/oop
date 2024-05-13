@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from uuid import UUID
 
-from oop.core.domain.vehicle.motorcycle.dto import MotorCycleDTO
+from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
 
 
 @dataclass(frozen=True)

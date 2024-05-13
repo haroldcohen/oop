@@ -4,7 +4,7 @@ from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.player.rider.null_rider.model import NullRider
 from oop.core.domain.player.riding.context import RidingContext
-from oop.core.domain.vehicle.rideable_interface import RideableInterface
+from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
 class Player:

@@ -1,13 +1,13 @@
 from uuid import UUID
 
-from oop.core.domain.vehicle.motorcycle.dto import MotorCycleDTO
-from oop.core.domain.vehicle.motorcycle.engine.model import MotorcycleEngine
-from oop.core.domain.vehicle.motorcycle.interface import MotorcycleInterface
-from oop.core.domain.vehicle.motorcycle.key.interface import MotorcycleKeyInterface
-from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
-from oop.core.domain.vehicle.motorcycle.key.null_key import NullMotorcycleKey
-from oop.core.domain.vehicle.null_rider_id import NullRiderId
-from oop.core.domain.vehicle.rideable_interface import RideableInterface
+from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
+from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
+from oop.core.domain.transport.motorcycle.interface import MotorcycleInterface
+from oop.core.domain.transport.motorcycle.key.interface import MotorcycleKeyInterface
+from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
+from oop.core.domain.transport.motorcycle.key.null_key import NullMotorcycleKey
+from oop.core.domain.transport.null_rider_id import NullRiderId
+from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
 class Motorcycle(MotorcycleInterface, RideableInterface):

@@ -1,7 +1,7 @@
 from uuid import UUID
 
-from oop.core.domain.vehicle.motorcycle.interface import MotorcycleInterface
-from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
+from oop.core.domain.transport.motorcycle.interface import MotorcycleInterface
+from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
 
 
 class NullMotorcycle(MotorcycleInterface):

@@ -2,9 +2,9 @@ from uuid import UUID
 
 from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
-from oop.core.domain.vehicle.motorcycle.interface import MotorcycleInterface
-from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
-from oop.core.domain.vehicle.motorcycle.null_motorcycle import NullMotorcycle
+from oop.core.domain.transport.motorcycle.interface import MotorcycleInterface
+from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
+from oop.core.domain.transport.motorcycle.null_motorcycle import NullMotorcycle
 
 
 class MotorcycleRider(RiderInterface):

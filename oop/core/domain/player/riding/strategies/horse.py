@@ -2,8 +2,8 @@ from typing import List
 
 from oop.core.domain.player.rider.horse.model import HorseRider
 from oop.core.domain.player.riding.strategies.interface import RidingStrategyInterface
-from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
-from oop.core.domain.vehicle.horse.model import Horse
+from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
+from oop.core.domain.transport.horse.model import Horse
 
 
 class RideHorseStrategy(RidingStrategyInterface):

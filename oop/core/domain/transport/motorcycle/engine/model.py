@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from oop.core.domain.vehicle.motorcycle.engine.dto import MotorcycleEngineDTO
+from oop.core.domain.transport.motorcycle.engine.dto import MotorcycleEngineDTO
 
 
 class MotorcycleEngine:

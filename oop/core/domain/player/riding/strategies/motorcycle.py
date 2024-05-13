@@ -2,8 +2,8 @@ from typing import List
 
 from oop.core.domain.player.rider.motorcycle.model import MotorcycleRider
 from oop.core.domain.player.riding.strategies.interface import RidingStrategyInterface
-from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
-from oop.core.domain.vehicle.motorcycle.model import Motorcycle
+from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
+from oop.core.domain.transport.motorcycle.model import Motorcycle
 
 
 class RideMotorcycleStrategy(RidingStrategyInterface):

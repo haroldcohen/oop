@@ -9,13 +9,13 @@ from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
 from oop.core.domain.player.rider.motorcycle.model import MotorcycleRider
 from oop.core.domain.player.riding.context import RidingContext
 from oop.core.domain.player.riding.strategies.motorcycle import RideMotorcycleStrategy
-from oop.core.domain.vehicle.motorcycle.dto import MotorCycleDTO
-from oop.core.domain.vehicle.motorcycle.engine.dto import MotorcycleEngineDTO
-from oop.core.domain.vehicle.motorcycle.engine.model import MotorcycleEngine
-from oop.core.domain.vehicle.motorcycle.key.dto import MotorcycleKeyDTO
-from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
-from oop.core.domain.vehicle.motorcycle.key.position import KeyPosition
-from oop.core.domain.vehicle.motorcycle.model import Motorcycle
+from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
+from oop.core.domain.transport.motorcycle.engine.dto import MotorcycleEngineDTO
+from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
+from oop.core.domain.transport.motorcycle.key.dto import MotorcycleKeyDTO
+from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
+from oop.core.domain.transport.motorcycle.key.position import KeyPosition
+from oop.core.domain.transport.motorcycle.model import Motorcycle
 
 
 @dataclass(frozen=True)

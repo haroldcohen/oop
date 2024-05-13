@@ -1,6 +1,6 @@
 from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.player.riding.strategies.interface import RidingStrategyInterface
-from oop.core.domain.vehicle.rideable_interface import RideableInterface
+from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
 class RidingContext:

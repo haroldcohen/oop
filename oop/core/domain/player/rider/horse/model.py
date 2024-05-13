@@ -2,9 +2,9 @@ from uuid import UUID
 
 from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
 from oop.core.domain.player.rider.interface import RiderInterface
-from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
-from oop.core.domain.vehicle.horse.interface import HorseInterface
-from oop.core.domain.vehicle.horse.null_horse import NullHorse
+from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
+from oop.core.domain.transport.horse.interface import HorseInterface
+from oop.core.domain.transport.horse.null_horse import NullHorse
 
 
 class HorseRider(RiderInterface):

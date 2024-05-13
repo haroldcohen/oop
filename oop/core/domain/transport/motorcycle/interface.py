@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
+from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
 
 
 class MotorcycleInterface(ABC):

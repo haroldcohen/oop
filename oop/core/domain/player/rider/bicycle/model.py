@@ -2,8 +2,8 @@ from uuid import UUID
 
 from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
 from oop.core.domain.player.rider.interface import RiderInterface
-from oop.core.domain.vehicle.bicycle.interface import BicycleInterface
-from oop.core.domain.vehicle.bicycle.null_bicycle import NullBicycle
+from oop.core.domain.transport.bicycle.interface import BicycleInterface
+from oop.core.domain.transport.bicycle.null_bicycle import NullBicycle
 
 
 class BicycleRider(RiderInterface):
