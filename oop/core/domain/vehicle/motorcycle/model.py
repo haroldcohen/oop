@@ -7,9 +7,10 @@ from oop.core.domain.vehicle.motorcycle.key.interface import MotorcycleKeyInterf
 from oop.core.domain.vehicle.motorcycle.key.model import MotorcycleKey
 from oop.core.domain.vehicle.motorcycle.key.null_key import NullMotorcycleKey
 from oop.core.domain.vehicle.null_rider_id import NullRiderId
+from oop.core.domain.vehicle.rideable_interface import RideableInterface
 
 
-class Motorcycle(MotorcycleInterface):
+class Motorcycle(MotorcycleInterface, RideableInterface):
 
     def __init__(
         self,

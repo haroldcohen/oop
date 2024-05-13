@@ -1,13 +1,10 @@
-from typing import Union
 from uuid import UUID
 
 from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.player.rider.null_rider.model import NullRider
 from oop.core.domain.player.riding.context import RidingContext
-from oop.core.domain.vehicle.bicycle.model import Bicycle
-from oop.core.domain.vehicle.horse.model import Horse
-from oop.core.domain.vehicle.motorcycle.model import Motorcycle
+from oop.core.domain.vehicle.rideable_interface import RideableInterface
 
 
 class Player:
@@ -23,11 +20,7 @@ class Player:
     def ride(
         self,
         rider: RiderInterface,
-        ride: Union[
-            Motorcycle,
-            Bicycle,
-            Horse,
-        ],
+        ride: RideableInterface,
         riding_context: RidingContext,
     ):
         self._rider = rider

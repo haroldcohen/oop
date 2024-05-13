@@ -3,9 +3,10 @@ from uuid import UUID
 from oop.core.domain.vehicle.bicycle.dto import BicycleDTO
 from oop.core.domain.vehicle.bicycle.interface import BicycleInterface
 from oop.core.domain.vehicle.null_rider_id import NullRiderId
+from oop.core.domain.vehicle.rideable_interface import RideableInterface
 
 
-class Bicycle(BicycleInterface):
+class Bicycle(BicycleInterface, RideableInterface):
 
     def __init__(
         self,

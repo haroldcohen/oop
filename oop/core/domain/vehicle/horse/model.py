@@ -6,9 +6,10 @@ from oop.core.domain.vehicle.horse.equipment.saddle.model import Saddle
 from oop.core.domain.vehicle.horse.equipment.saddle.null_saddle import NullSaddle
 from oop.core.domain.vehicle.horse.interface import HorseInterface
 from oop.core.domain.vehicle.null_rider_id import NullRiderId
+from oop.core.domain.vehicle.rideable_interface import RideableInterface
 
 
-class Horse(HorseInterface):
+class Horse(HorseInterface, RideableInterface):
 
     def __init__(
         self,
