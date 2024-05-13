@@ -3,6 +3,7 @@ from typing import Union
 from uuid import UUID
 
 from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
+from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
 from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
 
 
@@ -13,4 +14,5 @@ class PlayerDTO:
     rider: Union[
         MotorcycleRiderDTO,
         BicycleRiderDTO,
+        HorseRiderDTO,
     ]

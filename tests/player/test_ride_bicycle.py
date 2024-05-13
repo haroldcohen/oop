@@ -11,7 +11,6 @@ from oop.core.domain.player.riding.context import RidingContext
 from oop.core.domain.player.riding.strategies.bicycle import RideBicycleStrategy
 from oop.core.domain.vehicle.bicycle.dto import BicycleDTO
 from oop.core.domain.vehicle.bicycle.model import Bicycle
-from oop.core.domain.vehicle.null_rider_id import NullRiderId
 
 
 @dataclass(frozen=True)

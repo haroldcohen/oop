@@ -6,6 +6,7 @@ from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.player.rider.null_rider.model import NullRider
 from oop.core.domain.player.riding.context import RidingContext
 from oop.core.domain.vehicle.bicycle.model import Bicycle
+from oop.core.domain.vehicle.horse.model import Horse
 from oop.core.domain.vehicle.motorcycle.model import Motorcycle
 
 
@@ -25,6 +26,7 @@ class Player:
         ride: Union[
             Motorcycle,
             Bicycle,
+            Horse,
         ],
         riding_context: RidingContext,
     ):
