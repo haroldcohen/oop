@@ -3,7 +3,6 @@ from uuid import UUID
 from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.player.rider.null_rider.model import NullRider
-from oop.core.domain.player.riding.context import RidingContext
 from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
@@ -21,13 +20,9 @@ class Player:
         self,
         rider: RiderInterface,
         ride: RideableInterface,
-        riding_context: RidingContext,
     ):
         self._rider = rider
-        riding_context.execute_strategy(
-            rider=rider,
-            ride=ride,
-        )
+        self._rider.ride(ride=ride)
 
     def to_dto(self) -> PlayerDTO:
         return PlayerDTO(

@@ -7,8 +7,6 @@ from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.model import Player
 from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
 from oop.core.domain.player.rider.motorcycle.model import MotorcycleRider
-from oop.core.domain.player.riding.context import RidingContext
-from oop.core.domain.player.riding.strategies.motorcycle import RideMotorcycleStrategy
 from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
 from oop.core.domain.transport.motorcycle.engine.dto import MotorcycleEngineDTO
 from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
@@ -46,10 +44,12 @@ def expected_player(
 def expected_rider(
     test_params: TestRideMotorcycleParams,
     expected_motorcycle: MotorCycleDTO,
+    expected_key: MotorcycleKeyDTO,
 ) -> MotorcycleRiderDTO:
     return MotorcycleRiderDTO(
         id=test_params.rider_id,
         motorcycle=expected_motorcycle,
+        motorcycle_key=expected_key,
     )
 
 
@@ -106,20 +106,19 @@ def test_ride_motorcycle_should_seat_the_player_and_start_the_engine(
     expected_player,
 ):
     player = Player(_id=expected_player.id)
-    rider = MotorcycleRider(_id=expected_player.rider.id)
+    rider = MotorcycleRider(
+        _id=expected_player.rider.id,
+        motorcycle_key=MotorcycleKey(_id=expected_player.rider.motorcycle.key.id),
+    )
     motorcycle = Motorcycle(
         _id=expected_player.rider.motorcycle.id,
         engine=MotorcycleEngine(
             _id=expected_player.rider.motorcycle.engine.id,
         ),
     )
-    riding_context = RidingContext(
-        strategy=RideMotorcycleStrategy(keys=[MotorcycleKey(_id=expected_player.rider.motorcycle.key.id)])
-    )
     player.ride(
         rider=rider,
         ride=motorcycle,
-        riding_context=riding_context,
     )
 
     assert player.to_dto() == expected_player

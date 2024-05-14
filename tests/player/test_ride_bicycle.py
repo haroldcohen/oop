@@ -7,8 +7,6 @@ from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.model import Player
 from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
 from oop.core.domain.player.rider.bicycle.model import BicycleRider
-from oop.core.domain.player.riding.context import RidingContext
-from oop.core.domain.player.riding.strategies.bicycle import RideBicycleStrategy
 from oop.core.domain.transport.bicycle.dto import BicycleDTO
 from oop.core.domain.transport.bicycle.model import Bicycle
 
@@ -76,7 +74,6 @@ def test_ride_bicycle_should_seat_the_player(
     player.ride(
         rider=rider,
         ride=bicycle,
-        riding_context=RidingContext(strategy=RideBicycleStrategy()),
     )
 
     assert player.to_dto() == expected_player
