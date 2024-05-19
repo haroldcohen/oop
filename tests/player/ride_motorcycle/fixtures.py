@@ -1,19 +1,23 @@
 from dataclasses import dataclass
-from uuid import UUID, uuid4
+from uuid import UUID
 
 import pytest
 
 from oop.core.domain.player.dto import PlayerDTO
-from oop.core.domain.player.model import Player
 from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
-from oop.core.domain.player.rider.motorcycle.model import MotorcycleRider
 from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
 from oop.core.domain.transport.motorcycle.engine.dto import MotorcycleEngineDTO
-from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
 from oop.core.domain.transport.motorcycle.key.dto import MotorcycleKeyDTO
-from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
 from oop.core.domain.transport.motorcycle.key.position import KeyPosition
-from oop.core.domain.transport.motorcycle.model import Motorcycle
+
+__all__ = [
+    "TestRideMotorcycleParams",
+    "expected_player",
+    "expected_rider",
+    "expected_motorcycle",
+    "expected_key",
+    "expected_engine",
+]
 
 
 @dataclass(frozen=True)
@@ -32,7 +36,7 @@ class TestRideMotorcycleParams:
 @pytest.fixture
 def expected_player(
     test_params: TestRideMotorcycleParams,
-    expected_rider: MotorcycleRiderDTO,
+    expected_rider: MotorcycleRiderDTO,  # pylint: disable=redefined-outer-name
 ) -> PlayerDTO:
     return PlayerDTO(
         id=test_params.player_id,
@@ -43,8 +47,8 @@ def expected_player(
 @pytest.fixture
 def expected_rider(
     test_params: TestRideMotorcycleParams,
-    expected_motorcycle: MotorCycleDTO,
-    expected_key: MotorcycleKeyDTO,
+    expected_motorcycle: MotorCycleDTO,  # pylint: disable=redefined-outer-name
+    expected_key: MotorcycleKeyDTO,  # pylint: disable=redefined-outer-name
 ) -> MotorcycleRiderDTO:
     return MotorcycleRiderDTO(
         id=test_params.rider_id,
@@ -56,8 +60,8 @@ def expected_rider(
 @pytest.fixture
 def expected_motorcycle(
     test_params: TestRideMotorcycleParams,
-    expected_key: MotorcycleKeyDTO,
-    expected_engine: MotorcycleEngineDTO,
+    expected_key: MotorcycleKeyDTO,  # pylint: disable=redefined-outer-name
+    expected_engine: MotorcycleEngineDTO,  # pylint: disable=redefined-outer-name
 ) -> MotorCycleDTO:
     return MotorCycleDTO(
         id=test_params.motorcycle_id,
@@ -85,40 +89,3 @@ def expected_engine(
         id=test_params.engine_id,
         running=True,
     )
-
-
-@pytest.mark.parametrize(
-    "test_params",
-    [
-        (
-            TestRideMotorcycleParams(
-                player_id=uuid4(),
-                rider_id=uuid4(),
-                motorcycle_id=uuid4(),
-                engine_id=uuid4(),
-                key_id=uuid4(),
-            )
-        ),
-    ],
-)
-def test_ride_motorcycle_should_seat_the_player_and_start_the_engine(
-    test_params,
-    expected_player,
-):
-    player = Player(_id=expected_player.id)
-    rider = MotorcycleRider(
-        _id=expected_player.rider.id,
-        motorcycle_key=MotorcycleKey(_id=expected_player.rider.motorcycle.key.id),
-    )
-    motorcycle = Motorcycle(
-        _id=expected_player.rider.motorcycle.id,
-        engine=MotorcycleEngine(
-            _id=expected_player.rider.motorcycle.engine.id,
-        ),
-    )
-    player.ride(
-        rider=rider,
-        ride=motorcycle,
-    )
-
-    assert player.to_dto() == expected_player
