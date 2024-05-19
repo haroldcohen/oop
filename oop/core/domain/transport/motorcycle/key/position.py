@@ -5,3 +5,5 @@ class KeyPosition(Enum):
     ON = "on"
 
     OFF = "off"
+
+    NULL = "null"
