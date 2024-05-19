@@ -20,7 +20,7 @@ from tests.player.mount_bicycle.fixtures import *
         ),
     ],
 )
-def test_ride_bicycle_should_seat_the_player(
+def test_mount_bicycle_should_seat_the_player(
     test_params,
     expected_player,
 ):

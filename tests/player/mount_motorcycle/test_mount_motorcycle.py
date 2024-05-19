@@ -24,7 +24,7 @@ from tests.player.mount_motorcycle.fixtures import *
         ),
     ],
 )
-def test_ride_motorcycle_should_seat_the_player_and_start_the_engine(
+def test_mount_motorcycle_should_seat_the_player_and_start_the_engine(
     test_params,
     expected_player,
 ):

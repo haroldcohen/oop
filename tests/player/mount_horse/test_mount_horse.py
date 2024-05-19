@@ -20,7 +20,7 @@ from tests.player.mount_horse.fixtures import *
         )
     ],
 )
-def test_ride_horse_should_seat_the_player_on_a_calm_horse_with_a_saddle_on_its_back(
+def test_mount_horse_should_seat_the_player_on_a_calm_horse_with_a_saddle_on_its_back(
     test_params,
     expected_player,
 ):
