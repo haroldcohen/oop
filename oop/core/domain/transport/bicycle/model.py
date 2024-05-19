@@ -1,12 +1,11 @@
 from uuid import UUID
 
 from oop.core.domain.transport.bicycle.dto import BicycleDTO
-from oop.core.domain.transport.bicycle.interface import BicycleInterface
 from oop.core.domain.transport.null_rider_id import NullRiderId
 from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
-class Bicycle(BicycleInterface, RideableInterface):
+class Bicycle(RideableInterface):
 
     def __init__(
         self,

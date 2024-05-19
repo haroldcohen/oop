@@ -1,13 +1,15 @@
 from uuid import UUID
 
-from oop.core.domain.transport.bicycle.dto import BicycleDTO
-from oop.core.domain.transport.bicycle.interface import BicycleInterface
+from oop.core.domain.common.null_id import NullId
+from oop.core.domain.transport.bicycle.model import Bicycle
 
 
-class NullBicycle(BicycleInterface):
+class NullBicycle(Bicycle):
+
+    def __init__(
+        self,
+    ):
+        super().__init__(_id=NullId())
 
     def ride(self, rider_id: UUID):
-        pass
-
-    def to_dto(self) -> BicycleDTO:
         pass
