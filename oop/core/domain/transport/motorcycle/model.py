@@ -2,7 +2,6 @@ from uuid import UUID
 
 from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
 from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
-from oop.core.domain.transport.motorcycle.interface import MotorcycleInterface
 from oop.core.domain.transport.motorcycle.key.interface import MotorcycleKeyInterface
 from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
 from oop.core.domain.transport.motorcycle.key.null_key import NullMotorcycleKey
@@ -10,7 +9,7 @@ from oop.core.domain.transport.null_rider_id import NullRiderId
 from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
-class Motorcycle(MotorcycleInterface, RideableInterface):
+class Motorcycle(RideableInterface):
 
     def __init__(
         self,
