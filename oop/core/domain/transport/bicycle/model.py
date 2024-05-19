@@ -1,7 +1,7 @@
 from uuid import UUID
 
+from oop.core.domain.common.null_id import NullId
 from oop.core.domain.transport.bicycle.dto import BicycleDTO
-from oop.core.domain.transport.null_rider_id import NullRiderId
 from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
@@ -10,7 +10,7 @@ class Bicycle(RideableInterface):
     def __init__(
         self,
         _id: UUID,
-        rider_id: UUID = NullRiderId(),
+        rider_id: UUID = NullId(),
     ):
         self._id = _id
         self._rider_id = rider_id

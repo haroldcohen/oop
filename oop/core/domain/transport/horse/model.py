@@ -1,10 +1,10 @@
 from uuid import UUID
 
+from oop.core.domain.common.null_id import NullId
 from oop.core.domain.transport.horse.dto import HorseDTO
 from oop.core.domain.transport.horse.equipment.saddle.interface import SaddleInterface
 from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
 from oop.core.domain.transport.horse.equipment.saddle.null_saddle import NullSaddle
-from oop.core.domain.transport.null_rider_id import NullRiderId
 from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
@@ -14,7 +14,7 @@ class Horse(RideableInterface):
         self,
         _id: UUID,
         is_calm: bool = False,
-        rider_id: UUID = NullRiderId(),
+        rider_id: UUID = NullId(),
         saddle: SaddleInterface = NullSaddle(),
     ):
         self._id = _id

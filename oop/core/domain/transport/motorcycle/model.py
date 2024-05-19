@@ -1,10 +1,10 @@
 from uuid import UUID
 
+from oop.core.domain.common.null_id import NullId
 from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
 from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
 from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
 from oop.core.domain.transport.motorcycle.key.null_key import NullMotorcycleKey
-from oop.core.domain.transport.null_rider_id import NullRiderId
 from oop.core.domain.transport.rideable_interface import RideableInterface
 
 
@@ -15,7 +15,7 @@ class Motorcycle(RideableInterface):
         _id: UUID,
         engine: MotorcycleEngine,
         key: MotorcycleKey = NullMotorcycleKey(),
-        rider_id: UUID = NullRiderId(),
+        rider_id: UUID = NullId(),
     ):
         self._id = _id
         self._key = key
