@@ -3,7 +3,6 @@ from uuid import UUID
 from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
 from oop.core.domain.player.rider.interface import RiderInterface
 from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
-from oop.core.domain.transport.horse.interface import HorseInterface
 from oop.core.domain.transport.horse.model import Horse
 from oop.core.domain.transport.horse.null_horse import NullHorse
 
@@ -14,7 +13,7 @@ class HorseRider(RiderInterface):
         self,
         _id: UUID,
         saddle: Saddle,
-        horse: HorseInterface = NullHorse(),
+        horse: Horse = NullHorse(),
     ):
         self._id = _id
         self._saddle = saddle

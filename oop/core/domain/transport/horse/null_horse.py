@@ -1,11 +1,14 @@
 from uuid import UUID
 
-from oop.core.domain.transport.horse.dto import HorseDTO
+from oop.core.domain.common.null_id import NullId
 from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
-from oop.core.domain.transport.horse.interface import HorseInterface
+from oop.core.domain.transport.horse.model import Horse
 
 
-class NullHorse(HorseInterface):
+class NullHorse(Horse):
+
+    def __init__(self):
+        super().__init__(_id=NullId())
 
     def receive_pet(self):
         pass
@@ -14,7 +17,4 @@ class NullHorse(HorseInterface):
         pass
 
     def ride(self, rider_id: UUID):
-        pass
-
-    def to_dto(self) -> HorseDTO:
         pass
