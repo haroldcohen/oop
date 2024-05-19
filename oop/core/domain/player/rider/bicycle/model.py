@@ -20,6 +20,9 @@ class BicycleRider(RiderInterface):
         self._bicycle = ride
         self._bicycle.mount(rider_id=self._id)
 
+    def ride(self):
+        self._bicycle.move_forward()
+
     def to_dto(self) -> BicycleRiderDTO:
         return BicycleRiderDTO(
             id=self._id,

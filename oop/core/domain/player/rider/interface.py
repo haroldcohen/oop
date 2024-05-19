@@ -11,5 +11,11 @@ class RiderInterface(ABC):
         pass
 
     @abstractmethod
+    def ride(
+        self,
+    ):
+        pass
+
+    @abstractmethod
     def to_dto(self):
         pass

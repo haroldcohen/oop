@@ -31,6 +31,9 @@ class MotorcycleRider(RiderInterface):
             rider_id=self._id,
         )
 
+    def ride(self):
+        pass
+
     def to_dto(self) -> MotorcycleRiderDTO:
         return MotorcycleRiderDTO(
             id=self._id,

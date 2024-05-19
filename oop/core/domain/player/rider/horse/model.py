@@ -25,6 +25,9 @@ class HorseRider(RiderInterface):
         self._horse = ride
         self._horse.mount(rider_id=self._id)
 
+    def ride(self):
+        pass
+
     def to_dto(self) -> HorseRiderDTO:
         return HorseRiderDTO(
             id=self._id,
