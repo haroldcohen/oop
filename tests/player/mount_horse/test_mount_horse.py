@@ -6,13 +6,13 @@ from oop.core.domain.player.model import Player
 from oop.core.domain.player.rider.horse.model import HorseRider
 from oop.core.domain.transport.horse.equipment.saddle.model import Saddle
 from oop.core.domain.transport.horse.model import Horse
-from tests.player.ride_horse.fixtures import *
+from tests.player.mount_horse.fixtures import *
 
 
 @pytest.mark.parametrize(
     "test_params",
     [
-        TestRideHorseParams(
+        TestMountHorseParams(
             player_id=uuid4(),
             rider_id=uuid4(),
             horse_id=uuid4(),
@@ -31,7 +31,7 @@ def test_ride_horse_should_seat_the_player_on_a_calm_horse_with_a_saddle_on_its_
         saddle=saddle,
     )
     horse = Horse(_id=test_params.horse_id)
-    player.ride(
+    player.mount(
         rider=rider,
         ride=horse,
     )

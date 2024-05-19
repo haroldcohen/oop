@@ -7,14 +7,14 @@ from oop.core.domain.player.rider.motorcycle.model import MotorcycleRider
 from oop.core.domain.transport.motorcycle.engine.model import MotorcycleEngine
 from oop.core.domain.transport.motorcycle.key.model import MotorcycleKey
 from oop.core.domain.transport.motorcycle.model import Motorcycle
-from tests.player.ride_motorcycle.fixtures import *
+from tests.player.mount_motorcycle.fixtures import *
 
 
 @pytest.mark.parametrize(
     "test_params",
     [
         (
-            TestRideMotorcycleParams(
+            TestMountMotorcycleParams(
                 player_id=uuid4(),
                 rider_id=uuid4(),
                 motorcycle_id=uuid4(),
@@ -39,7 +39,7 @@ def test_ride_motorcycle_should_seat_the_player_and_start_the_engine(
             _id=expected_player.rider.motorcycle.engine.id,
         ),
     )
-    player.ride(
+    player.mount(
         rider=rider,
         ride=motorcycle,
     )

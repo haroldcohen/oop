@@ -11,7 +11,7 @@ from oop.core.domain.transport.motorcycle.key.dto import MotorcycleKeyDTO
 from oop.core.domain.transport.motorcycle.key.position import KeyPosition
 
 __all__ = [
-    "TestRideMotorcycleParams",
+    "TestMountMotorcycleParams",
     "expected_player",
     "expected_rider",
     "expected_motorcycle",
@@ -21,7 +21,7 @@ __all__ = [
 
 
 @dataclass(frozen=True)
-class TestRideMotorcycleParams:
+class TestMountMotorcycleParams:
     player_id: UUID
 
     rider_id: UUID
@@ -35,7 +35,7 @@ class TestRideMotorcycleParams:
 
 @pytest.fixture
 def expected_player(
-    test_params: TestRideMotorcycleParams,
+    test_params: TestMountMotorcycleParams,
     expected_rider: MotorcycleRiderDTO,  # pylint: disable=redefined-outer-name
 ) -> PlayerDTO:
     return PlayerDTO(
@@ -46,7 +46,7 @@ def expected_player(
 
 @pytest.fixture
 def expected_rider(
-    test_params: TestRideMotorcycleParams,
+    test_params: TestMountMotorcycleParams,
     expected_motorcycle: MotorCycleDTO,  # pylint: disable=redefined-outer-name
     expected_key: MotorcycleKeyDTO,  # pylint: disable=redefined-outer-name
 ) -> MotorcycleRiderDTO:
@@ -59,7 +59,7 @@ def expected_rider(
 
 @pytest.fixture
 def expected_motorcycle(
-    test_params: TestRideMotorcycleParams,
+    test_params: TestMountMotorcycleParams,
     expected_key: MotorcycleKeyDTO,  # pylint: disable=redefined-outer-name
     expected_engine: MotorcycleEngineDTO,  # pylint: disable=redefined-outer-name
 ) -> MotorCycleDTO:
@@ -73,7 +73,7 @@ def expected_motorcycle(
 
 @pytest.fixture
 def expected_key(
-    test_params: TestRideMotorcycleParams,
+    test_params: TestMountMotorcycleParams,
 ) -> MotorcycleKeyDTO:
     return MotorcycleKeyDTO(
         id=test_params.key_id,
@@ -83,7 +83,7 @@ def expected_key(
 
 @pytest.fixture
 def expected_engine(
-    test_params: TestRideMotorcycleParams,
+    test_params: TestMountMotorcycleParams,
 ) -> MotorcycleEngineDTO:
     return MotorcycleEngineDTO(
         id=test_params.engine_id,

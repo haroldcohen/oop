@@ -16,5 +16,5 @@ class NullHorse(Horse):
     def equip_saddle(self, saddle: Saddle):
         pass
 
-    def ride(self, rider_id: UUID):
+    def mount(self, rider_id: UUID):
         pass

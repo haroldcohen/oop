@@ -15,7 +15,7 @@ class Bicycle(RideableInterface):
         self._id = _id
         self._rider_id = rider_id
 
-    def ride(
+    def mount(
         self,
         rider_id: UUID,
     ):

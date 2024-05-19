@@ -16,7 +16,7 @@ class NullMotorcycle(Motorcycle):
     def start(self, key: MotorcycleKey):
         pass
 
-    def ride(self, rider_id: UUID):
+    def mount(self, rider_id: UUID):
         pass
 
     def to_dto(self):

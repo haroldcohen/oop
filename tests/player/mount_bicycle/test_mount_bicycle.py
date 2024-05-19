@@ -5,14 +5,14 @@ import pytest
 from oop.core.domain.player.model import Player
 from oop.core.domain.player.rider.bicycle.model import BicycleRider
 from oop.core.domain.transport.bicycle.model import Bicycle
-from tests.player.ride_bicycle.fixtures import *
+from tests.player.mount_bicycle.fixtures import *
 
 
 @pytest.mark.parametrize(
     "test_params",
     [
         (
-            TestRideBicycleParams(
+            TestMountBicycleParams(
                 player_id=uuid4(),
                 rider_id=uuid4(),
                 bicycle_id=uuid4(),
@@ -27,7 +27,7 @@ def test_ride_bicycle_should_seat_the_player(
     player = Player(_id=test_params.player_id)
     rider = BicycleRider(_id=test_params.rider_id)
     bicycle = Bicycle(_id=test_params.bicycle_id)
-    player.ride(
+    player.mount(
         rider=rider,
         ride=bicycle,
     )

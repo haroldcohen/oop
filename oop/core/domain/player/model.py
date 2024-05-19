@@ -16,13 +16,13 @@ class Player:
         self._id = _id
         self._rider = rider
 
-    def ride(
+    def mount(
         self,
         rider: RiderInterface,
         ride: RideableInterface,
     ):
         self._rider = rider
-        self._rider.ride(ride=ride)
+        self._rider.mount(ride=ride)
 
     def to_dto(self) -> PlayerDTO:
         return PlayerDTO(

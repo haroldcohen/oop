@@ -19,11 +19,11 @@ class HorseRider(RiderInterface):
         self._saddle = saddle
         self._horse = horse
 
-    def ride(self, ride: Horse):
+    def mount(self, ride: Horse):
         ride.receive_pet()
         ride.equip_saddle(saddle=self._saddle)
         self._horse = ride
-        self._horse.ride(rider_id=self._id)
+        self._horse.mount(rider_id=self._id)
 
     def to_dto(self) -> HorseRiderDTO:
         return HorseRiderDTO(

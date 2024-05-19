@@ -22,7 +22,7 @@ class Motorcycle(RideableInterface):
         self._rider_id = rider_id
         self._engine = engine
 
-    def ride(
+    def mount(
         self,
         rider_id: UUID,
     ):

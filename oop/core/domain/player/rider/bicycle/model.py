@@ -16,9 +16,9 @@ class BicycleRider(RiderInterface):
         self._id = _id
         self._bicycle = bicycle
 
-    def ride(self, ride: Bicycle):
+    def mount(self, ride: Bicycle):
         self._bicycle = ride
-        self._bicycle.ride(rider_id=self._id)
+        self._bicycle.mount(rider_id=self._id)
 
     def to_dto(self) -> BicycleRiderDTO:
         return BicycleRiderDTO(

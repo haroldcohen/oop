@@ -29,7 +29,7 @@ class Horse(RideableInterface):
         self._saddle = saddle
         self._saddle.equip()
 
-    def ride(self, rider_id: UUID):
+    def mount(self, rider_id: UUID):
         self._rider_id = rider_id
 
     def to_dto(self) -> HorseDTO:

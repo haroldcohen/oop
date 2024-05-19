@@ -19,7 +19,7 @@ class MotorcycleRider(RiderInterface):
         self._motorcycle_key = motorcycle_key
         self._motorcycle = motorcycle
 
-    def ride(
+    def mount(
         self,
         ride: Motorcycle,
     ):
@@ -27,7 +27,7 @@ class MotorcycleRider(RiderInterface):
         self._motorcycle.start(
             key=self._motorcycle_key,
         )
-        self._motorcycle.ride(
+        self._motorcycle.mount(
             rider_id=self._id,
         )
 

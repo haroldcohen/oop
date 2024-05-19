@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class RiderInterface(ABC):
 
     @abstractmethod
-    def ride(
+    def mount(
         self,
         ride,
     ):
