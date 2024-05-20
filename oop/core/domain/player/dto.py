@@ -1,21 +1,16 @@
 from dataclasses import dataclass, field
-from typing import Union
+from typing import Generic, TypeVar
 from uuid import UUID
 
 from oop.core.domain.player.location.dto import PlayerLocationDTO
-from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
-from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
-from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
+
+RiderDTO = TypeVar("RiderDTO")
 
 
 @dataclass(frozen=True)
-class PlayerDTO:
+class PlayerDTO(Generic[RiderDTO]):
     id: UUID
 
-    rider: Union[
-        MotorcycleRiderDTO,
-        BicycleRiderDTO,
-        HorseRiderDTO,
-    ]
+    rider: RiderDTO
 
     location: PlayerLocationDTO = field(default_factory=PlayerLocationDTO)
