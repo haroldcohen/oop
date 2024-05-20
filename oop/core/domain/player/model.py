@@ -29,7 +29,7 @@ class Player(PlayerInterface):
         self._rider = rider
         self._rider.mount(ride=ride)
 
-    def ride(
+    def travel(
         self,
         distance: int,
         game_map: MapInterface,

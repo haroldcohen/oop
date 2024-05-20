@@ -20,7 +20,7 @@ from oop.core.domain.transport.location.dto import TransportLocationDTO
 from oop.core.domain.transport.location.model import TransportLocation
 
 __all__ = [
-    "TestRideBicycleParams",
+    "TestTravelByBicycleParams",
     "expected_player",
     "expected_bicycle",
     "expected_rider",
@@ -32,7 +32,7 @@ __all__ = [
 
 
 @dataclass(frozen=True)
-class TestRideBicycleParams:
+class TestTravelByBicycleParams:
 
     ride_distance: int
 
@@ -49,7 +49,7 @@ class TestRideBicycleParams:
 
 @pytest.fixture
 def expected_player(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
     expected_rider,  # pylint: disable=redefined-outer-name
 ) -> PlayerDTO:
     return PlayerDTO(
@@ -64,7 +64,7 @@ def expected_player(
 
 @pytest.fixture
 def expected_rider(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
     expected_bicycle,  # pylint: disable=redefined-outer-name
 ):
     return BicycleRiderDTO(
@@ -75,7 +75,7 @@ def expected_rider(
 
 @pytest.fixture
 def expected_bicycle(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
 ) -> BicycleDTO:
     return BicycleDTO(
         id=test_params.bicycle_id,
@@ -88,7 +88,7 @@ def expected_bicycle(
 
 @pytest.fixture
 def expected_map(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
     expected_player,  # pylint: disable=redefined-outer-name
 ) -> MapDTO:
     base_terrain_dto = [[DirtTileDTO()] for _ in range(test_params.ride_distance)]
@@ -107,7 +107,7 @@ def expected_map(
 
 @pytest.fixture
 def player(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
     bicycle_rider,  # pylint: disable=redefined-outer-name
 ) -> Player:
     return Player(
@@ -122,7 +122,7 @@ def player(
 
 @pytest.fixture
 def bicycle_rider(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
 ) -> BicycleRider:
     return BicycleRider(
         _id=test_params.rider_id,
@@ -139,7 +139,7 @@ def bicycle_rider(
 
 @pytest.fixture
 def game_map(
-    test_params: TestRideBicycleParams,
+    test_params: TestTravelByBicycleParams,
     player,  # pylint: disable=redefined-outer-name
 ) -> Map:
     base_terrain = [[DirtTile(players=[player])]]
