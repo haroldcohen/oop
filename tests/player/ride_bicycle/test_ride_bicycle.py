@@ -1,10 +1,5 @@
 import pytest
 
-from oop.core.domain.player.location.model import PlayerLocation
-from oop.core.domain.player.model import Player
-from oop.core.domain.player.rider.bicycle.model import BicycleRider
-from oop.core.domain.transport.bicycle.model import Bicycle
-from oop.core.domain.transport.location.model import TransportLocation
 from tests.player.ride_bicycle.fixtures import *
 
 
@@ -23,30 +18,17 @@ from tests.player.ride_bicycle.fixtures import *
         ),
     ],
 )
-def test_ride_bicycle_for_n_meters_on_the_road_should_move_the_player_and_bicycle_on_the_map(
-    test_params, expected_player
+def test_ride_bicycle_for_n_meters_on_dirt_should_move_the_player_and_bicycle_on_the_map(
+    test_params,
+    player,
+    game_map,
+    expected_player,
+    expected_map,
 ):
-    bicycle_rider = BicycleRider(
-        _id=test_params.rider_id,
-        bicycle=Bicycle(
-            _id=test_params.bicycle_id,
-            rider_id=test_params.rider_id,
-            location=TransportLocation(
-                x_coordinates=0,
-                y_coordinates=0,
-            ),
-        ),
-    )
-    player = Player(
-        _id=test_params.player_id,
-        rider=bicycle_rider,
-        location=PlayerLocation(
-            x_coordinates=0,
-            y_coordinates=0,
-        ),
-    )
     player.ride(
         distance=test_params.ride_distance,
+        game_map=game_map,
     )
 
     assert player.to_dto() == expected_player
+    assert game_map.to_dto() == expected_map
