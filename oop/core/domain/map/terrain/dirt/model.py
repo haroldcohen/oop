@@ -1,3 +1,4 @@
+# pylint: disable=duplicate-code
 from typing import List
 
 from oop.core.domain.map.terrain.dirt.dto import DirtTileDTO
