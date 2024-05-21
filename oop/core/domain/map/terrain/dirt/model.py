@@ -3,6 +3,10 @@ from typing import List
 from oop.core.domain.map.terrain.dirt.dto import DirtTileDTO
 from oop.core.domain.map.terrain.tile_interface import TileInterface
 from oop.core.domain.player.model import Player
+from oop.core.domain.player.travel.context import TravelContext
+from oop.core.domain.player.travel.strategies.bicycle.default import TravelByBicycleDefaultStrategy
+from oop.core.domain.player.travel.strategies.foot.default import TravelByFootDefaultStrategy
+from oop.core.domain.player.travel.strategy import TravelStrategy
 
 
 class DirtTile(TileInterface):
@@ -21,9 +25,15 @@ class DirtTile(TileInterface):
 
     def move_player(
         self,
-        player,
+        player: Player,
+        strategy: TravelStrategy,
     ):
         self._players.append(player)
+        travel_strategy = TravelByFootDefaultStrategy()
+        if strategy == TravelStrategy.BY_BICYCLE:
+            travel_strategy = TravelByBicycleDefaultStrategy()
+        travel_context = TravelContext(strategy=travel_strategy)
+        travel_context.execute_strategy(player=player)
 
     def to_dto(self) -> DirtTileDTO:
         return DirtTileDTO(

@@ -7,6 +7,7 @@ from oop.core.domain.map.terrain.dirt.model import DirtTile
 from oop.core.domain.map.terrain.water.dto import WaterTileDTO
 from oop.core.domain.map.terrain.water.model import WaterTile
 from oop.core.domain.player.position import PlayerPosition
+from oop.core.domain.player.travel.strategy import TravelStrategy
 from tests.player.travel_by_bicycle.fixtures import *
 
 
@@ -25,7 +26,7 @@ from tests.player.travel_by_bicycle.fixtures import *
         ),
     ],
 )
-def test_travel_by_bicycle_for_n_meters_on_dirt_should_move_the_player_and_bicycle_on_the_map(
+def test_travel_by_bicycle_on_dirt_should_move_the_player_and_bicycle_on_the_map(
     test_params,
     player,
     game_map,
@@ -35,6 +36,7 @@ def test_travel_by_bicycle_for_n_meters_on_dirt_should_move_the_player_and_bicyc
     player.travel(
         distance=test_params.ride_distance,
         game_map=game_map,
+        strategy=TravelStrategy.BY_BICYCLE,
     )
 
     assert player.to_dto() == expected_player
@@ -74,6 +76,7 @@ def test_travel_by_bicycle_in_shallow_waters_should_make_the_player_and_the_bicy
     player.travel(
         distance=test_params.ride_distance,
         game_map=game_map,
+        strategy=TravelStrategy.BY_BICYCLE,
     )
 
     assert player.to_dto() == expected_player
