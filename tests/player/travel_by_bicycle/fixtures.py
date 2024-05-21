@@ -12,6 +12,7 @@ from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.location.dto import PlayerLocationDTO
 from oop.core.domain.player.location.model import PlayerLocation
 from oop.core.domain.player.model import Player
+from oop.core.domain.player.position import PlayerPosition
 from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
 from oop.core.domain.player.rider.bicycle.model import BicycleRider
 from oop.core.domain.transport.bicycle.dto import BicycleDTO
@@ -46,6 +47,8 @@ class TestTravelByBicycleParams:
 
     bicycle_id: UUID = field(default_factory=uuid4)
 
+    expected_position: PlayerPosition = field(default=PlayerPosition.SEATING)
+
 
 @pytest.fixture
 def expected_player(
@@ -59,6 +62,7 @@ def expected_player(
             x_coordinates=0,
             y_coordinates=test_params.expected_player_location[1],
         ),
+        position=test_params.expected_position,
     )
 
 

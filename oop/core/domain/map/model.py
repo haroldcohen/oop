@@ -2,6 +2,7 @@ from typing import List
 
 from oop.core.domain.map.dto import MapDTO
 from oop.core.domain.map.interface import MapInterface
+from oop.core.domain.map.terrain.tile_interface import TileInterface
 from oop.core.domain.player.model import Player
 
 
@@ -9,7 +10,7 @@ class Map(MapInterface):
 
     def __init__(
         self,
-        terrain: List,
+        terrain: List[List[TileInterface]],
     ):
         self._terrain = terrain
 
