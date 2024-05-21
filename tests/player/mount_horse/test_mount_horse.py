@@ -12,7 +12,7 @@ from tests.player.mount_horse.fixtures import *
 @pytest.mark.parametrize(
     "test_params",
     [
-        TestMountHorseParams(
+        MountHorseTestParams(
             player_id=uuid4(),
             rider_id=uuid4(),
             horse_id=uuid4(),

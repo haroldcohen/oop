@@ -13,12 +13,12 @@ from tests.player.travel_by_bicycle.fixtures import *
 @pytest.mark.parametrize(
     "test_params",
     [
-        TestTravelByBicycleParams(
+        TravelByBicycleTestParams(
             ride_distance=1,
             expected_player_location=(0, 1),
             expected_bicycle_location=(0, 1),
         ),
-        TestTravelByBicycleParams(
+        TravelByBicycleTestParams(
             ride_distance=2,
             expected_player_location=(0, 2),
             expected_bicycle_location=(0, 2),
@@ -44,13 +44,13 @@ def test_travel_by_bicycle_for_n_meters_on_dirt_should_move_the_player_and_bicyc
 @pytest.mark.parametrize(
     "test_params",
     [
-        TestTravelByBicycleParams(
+        TravelByBicycleTestParams(
             ride_distance=2,
             expected_player_location=(0, 1),
             expected_bicycle_location=(0, 1),
             expected_position=PlayerPosition.LAYING_DOWN,
         ),
-        TestTravelByBicycleParams(
+        TravelByBicycleTestParams(
             ride_distance=3,
             expected_player_location=(0, 1),
             expected_bicycle_location=(0, 1),

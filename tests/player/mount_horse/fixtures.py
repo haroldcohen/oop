@@ -8,11 +8,11 @@ from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
 from oop.core.domain.transport.horse.dto import HorseDTO
 from oop.core.domain.transport.horse.equipment.saddle.dto import SaddleDTO
 
-__all__ = ["TestMountHorseParams", "expected_player", "expected_rider", "expected_horse", "expected_saddle"]
+__all__ = ["MountHorseTestParams", "expected_player", "expected_rider", "expected_horse", "expected_saddle"]
 
 
 @dataclass(frozen=True)
-class TestMountHorseParams:
+class MountHorseTestParams:
     player_id: UUID
 
     rider_id: UUID
@@ -24,7 +24,7 @@ class TestMountHorseParams:
 
 @pytest.fixture
 def expected_player(
-    test_params: TestMountHorseParams,
+    test_params: MountHorseTestParams,
     expected_rider,  # pylint: disable=redefined-outer-name
 ) -> PlayerDTO:
     return PlayerDTO(id=test_params.player_id, rider=expected_rider)
@@ -32,7 +32,7 @@ def expected_player(
 
 @pytest.fixture
 def expected_rider(
-    test_params: TestMountHorseParams,
+    test_params: MountHorseTestParams,
     expected_horse,  # pylint: disable=redefined-outer-name
     expected_saddle,  # pylint: disable=redefined-outer-name
 ) -> HorseRiderDTO:
@@ -45,7 +45,7 @@ def expected_rider(
 
 @pytest.fixture
 def expected_horse(
-    test_params: TestMountHorseParams,
+    test_params: MountHorseTestParams,
     expected_saddle,  # pylint: disable=redefined-outer-name
 ) -> HorseDTO:
     return HorseDTO(
@@ -58,7 +58,7 @@ def expected_horse(
 
 @pytest.fixture
 def expected_saddle(
-    test_params: TestMountHorseParams,
+    test_params: MountHorseTestParams,
 ) -> SaddleDTO:
     return SaddleDTO(
         id=test_params.saddle_id,

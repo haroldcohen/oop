@@ -1,3 +1,4 @@
+# pylint: disable=duplicate-code
 from dataclasses import dataclass, field
 from typing import Tuple
 from uuid import UUID, uuid4
@@ -16,7 +17,7 @@ from oop.core.domain.player.rider.null_rider.dto import NullRiderDTO
 from oop.core.domain.player.rider.null_rider.model import NullRider
 
 __all__ = [
-    "TestTravelByFootParams",
+    "TravelByFootTestParams",
     "expected_player",
     "expected_map",
     "player",
@@ -25,7 +26,7 @@ __all__ = [
 
 
 @dataclass(frozen=True)
-class TestTravelByFootParams:
+class TravelByFootTestParams:
 
     ride_distance: int
 
@@ -36,7 +37,7 @@ class TestTravelByFootParams:
 
 @pytest.fixture
 def expected_player(
-    test_params: TestTravelByFootParams,
+    test_params: TravelByFootTestParams,
 ) -> PlayerDTO:
     return PlayerDTO(
         id=test_params.player_id,
@@ -49,7 +50,7 @@ def expected_player(
 
 @pytest.fixture
 def expected_map(
-    test_params: TestTravelByFootParams,
+    test_params: TravelByFootTestParams,
     expected_player,  # pylint: disable=redefined-outer-name
 ) -> MapDTO:
     base_terrain_dto = [[DirtTileDTO()] for _ in range(test_params.ride_distance)]
@@ -68,7 +69,7 @@ def expected_map(
 
 @pytest.fixture
 def game_map(
-    test_params: TestTravelByFootParams,
+    test_params: TravelByFootTestParams,
     player,  # pylint: disable=redefined-outer-name
 ) -> Map:
     base_terrain = [[DirtTile(players=[player])]]
@@ -80,7 +81,7 @@ def game_map(
 
 @pytest.fixture
 def player(
-    test_params: TestTravelByFootParams,
+    test_params: TravelByFootTestParams,
 ) -> Player:
     return Player(
         _id=test_params.player_id,

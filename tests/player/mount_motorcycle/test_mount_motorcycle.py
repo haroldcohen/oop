@@ -14,7 +14,7 @@ from tests.player.mount_motorcycle.fixtures import *
     "test_params",
     [
         (
-            TestMountMotorcycleParams(
+            MountMotorcycleTestParams(
                 player_id=uuid4(),
                 rider_id=uuid4(),
                 motorcycle_id=uuid4(),

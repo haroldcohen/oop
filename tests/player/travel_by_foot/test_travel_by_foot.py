@@ -5,7 +5,7 @@ from tests.player.travel_by_foot.fixtures import *
 
 @pytest.mark.parametrize(
     "test_params",
-    [TestTravelByFootParams(ride_distance=1, expected_player_location=(0, 1))],
+    [TravelByFootTestParams(ride_distance=1, expected_player_location=(0, 1))],
 )
 def test_travel_by_foot_should_move_the_player_on_the_map(
     test_params,

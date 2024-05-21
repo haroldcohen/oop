@@ -12,7 +12,7 @@ from tests.player.mount_bicycle.fixtures import *
     "test_params",
     [
         (
-            TestMountBicycleParams(
+            MountBicycleTestParams(
                 player_id=uuid4(),
                 rider_id=uuid4(),
                 bicycle_id=uuid4(),

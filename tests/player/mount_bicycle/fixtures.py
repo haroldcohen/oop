@@ -7,11 +7,11 @@ from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
 from oop.core.domain.transport.bicycle.dto import BicycleDTO
 
-__all__ = ["expected_player", "expected_bicycle_rider", "expected_bicycle", "TestMountBicycleParams"]
+__all__ = ["expected_player", "expected_bicycle_rider", "expected_bicycle", "MountBicycleTestParams"]
 
 
 @dataclass(frozen=True)
-class TestMountBicycleParams:
+class MountBicycleTestParams:
     player_id: UUID
 
     rider_id: UUID
@@ -21,7 +21,7 @@ class TestMountBicycleParams:
 
 @pytest.fixture
 def expected_player(
-    test_params: TestMountBicycleParams,
+    test_params: MountBicycleTestParams,
     expected_bicycle_rider: BicycleRiderDTO,  # pylint: disable=redefined-outer-name
 ) -> PlayerDTO:
     return PlayerDTO(
@@ -32,7 +32,7 @@ def expected_player(
 
 @pytest.fixture
 def expected_bicycle_rider(
-    test_params: TestMountBicycleParams,
+    test_params: MountBicycleTestParams,
     expected_bicycle: BicycleDTO,  # pylint: disable=redefined-outer-name
 ) -> BicycleRiderDTO:
     return BicycleRiderDTO(
@@ -43,7 +43,7 @@ def expected_bicycle_rider(
 
 @pytest.fixture
 def expected_bicycle(
-    test_params: TestMountBicycleParams,
+    test_params: MountBicycleTestParams,
 ) -> BicycleDTO:
     return BicycleDTO(
         id=test_params.bicycle_id,
