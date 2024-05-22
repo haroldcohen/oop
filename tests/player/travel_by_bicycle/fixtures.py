@@ -50,6 +50,8 @@ class TravelByBicycleTestParams:
 
     expected_position: PlayerPosition = field(default=PlayerPosition.SEATING)
 
+    expected_health_points: int = field(default=10)
+
 
 @pytest.fixture
 def expected_player(
@@ -64,6 +66,7 @@ def expected_player(
             y_coordinates=test_params.expected_player_location[1],
         ),
         position=test_params.expected_position,
+        health_points=test_params.expected_health_points,
     )
 
 

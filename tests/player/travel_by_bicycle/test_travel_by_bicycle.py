@@ -51,16 +51,18 @@ def test_travel_by_bicycle_on_dirt_should_move_the_player_and_bicycle_on_the_map
             expected_player_location=(0, 1),
             expected_bicycle_location=(0, 1),
             expected_position=PlayerPosition.LAYING_DOWN,
+            expected_health_points=9,
         ),
         TravelByBicycleTestParams(
             ride_distance=3,
             expected_player_location=(0, 1),
             expected_bicycle_location=(0, 1),
             expected_position=PlayerPosition.LAYING_DOWN,
+            expected_health_points=9,
         ),
     ],
 )
-def test_travel_by_bicycle_in_shallow_waters_should_make_the_player_and_the_bicycle_fall(
+def test_travel_by_bicycle_in_shallow_waters_should_injure_the_player_and_make_him_fall(
     test_params,
     expected_player,
     player,

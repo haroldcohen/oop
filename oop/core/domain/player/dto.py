@@ -17,3 +17,5 @@ class PlayerDTO(Generic[RiderDTO]):
     position: PlayerPosition
 
     location: PlayerLocationDTO = field(default_factory=PlayerLocationDTO)
+
+    health_points: int = field(default=10)

@@ -24,6 +24,7 @@ class Player(PlayerInterface):
         self._rider = rider
         self._location = location
         self._position = position
+        self._health_points = 10
 
     def mount(
         self,
@@ -54,6 +55,7 @@ class Player(PlayerInterface):
 
     def fall(self):
         self._position = PlayerPosition.LAYING_DOWN
+        self._health_points -= 1
 
     def walk(self):
         self._location.move_forward()
@@ -64,4 +66,5 @@ class Player(PlayerInterface):
             rider=self._rider.to_dto(),
             location=self._location.to_dto(),
             position=self._position,
+            health_points=self._health_points,
         )
