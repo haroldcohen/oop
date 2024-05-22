@@ -118,6 +118,7 @@ def player(
     return Player(
         _id=test_params.player_id,
         rider=bicycle_rider,
+        position=PlayerPosition.SEATING,
         location=PlayerLocation(
             x_coordinates=0,
             y_coordinates=0,

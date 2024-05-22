@@ -13,6 +13,7 @@ from oop.core.domain.player.dto import PlayerDTO
 from oop.core.domain.player.location.dto import PlayerLocationDTO
 from oop.core.domain.player.location.model import PlayerLocation
 from oop.core.domain.player.model import Player
+from oop.core.domain.player.position import PlayerPosition
 from oop.core.domain.player.rider.null_rider.dto import NullRiderDTO
 from oop.core.domain.player.rider.null_rider.model import NullRider
 
@@ -42,6 +43,7 @@ def expected_player(
     return PlayerDTO(
         id=test_params.player_id,
         rider=NullRiderDTO(),
+        position=PlayerPosition.STANDING,
         location=PlayerLocationDTO(
             y_coordinates=test_params.expected_player_location[1],
         ),

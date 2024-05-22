@@ -1,9 +1,11 @@
+# pylint: disable=duplicate-code
 from dataclasses import dataclass
 from uuid import UUID
 
 import pytest
 
 from oop.core.domain.player.dto import PlayerDTO
+from oop.core.domain.player.position import PlayerPosition
 from oop.core.domain.player.rider.horse.dto import HorseRiderDTO
 from oop.core.domain.transport.horse.dto import HorseDTO
 from oop.core.domain.transport.horse.equipment.saddle.dto import SaddleDTO
@@ -27,7 +29,11 @@ def expected_player(
     test_params: MountHorseTestParams,
     expected_rider,  # pylint: disable=redefined-outer-name
 ) -> PlayerDTO:
-    return PlayerDTO(id=test_params.player_id, rider=expected_rider)
+    return PlayerDTO(
+        id=test_params.player_id,
+        rider=expected_rider,
+        position=PlayerPosition.SEATING,
+    )
 
 
 @pytest.fixture

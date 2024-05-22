@@ -1,9 +1,11 @@
+# pylint: disable=duplicate-code
 from dataclasses import dataclass
 from uuid import UUID
 
 import pytest
 
 from oop.core.domain.player.dto import PlayerDTO
+from oop.core.domain.player.position import PlayerPosition
 from oop.core.domain.player.rider.motorcycle.dto import MotorcycleRiderDTO
 from oop.core.domain.transport.motorcycle.dto import MotorCycleDTO
 from oop.core.domain.transport.motorcycle.engine.dto import MotorcycleEngineDTO
@@ -41,6 +43,7 @@ def expected_player(
     return PlayerDTO(
         id=test_params.player_id,
         rider=expected_rider,
+        position=PlayerPosition.SEATING,
     )
 
 

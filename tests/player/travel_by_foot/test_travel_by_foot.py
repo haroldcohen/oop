@@ -6,13 +6,19 @@ from oop.core.domain.map.terrain.dirt.dto import DirtTileDTO
 from oop.core.domain.map.terrain.dirt.model import DirtTile
 from oop.core.domain.map.terrain.water.dto import WaterTileDTO
 from oop.core.domain.map.terrain.water.model import WaterTile
+from oop.core.domain.player.position import PlayerPosition
 from oop.core.domain.player.travel.strategy import TravelStrategy
 from tests.player.travel_by_foot.fixtures import *
 
 
 @pytest.mark.parametrize(
     "test_params",
-    [TravelByFootTestParams(ride_distance=1, expected_player_location=(0, 1))],
+    [
+        TravelByFootTestParams(
+            ride_distance=1,
+            expected_player_location=(0, 1),
+        )
+    ],
 )
 def test_travel_by_foot_on_dirt_should_move_the_player_on_the_map(
     test_params,
@@ -33,7 +39,12 @@ def test_travel_by_foot_on_dirt_should_move_the_player_on_the_map(
 
 @pytest.mark.parametrize(
     "test_params",
-    [TravelByFootTestParams(ride_distance=2, expected_player_location=(0, 2))],
+    [
+        TravelByFootTestParams(
+            ride_distance=2,
+            expected_player_location=(0, 2),
+        )
+    ],
 )
 def test_travel_by_foot_in_shallow_water_should_move_the_player_on_the_map(
     test_params,

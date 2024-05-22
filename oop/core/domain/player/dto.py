@@ -14,6 +14,6 @@ class PlayerDTO(Generic[RiderDTO]):
 
     rider: RiderDTO
 
-    position: PlayerPosition = field(default=PlayerPosition.SEATING)
+    position: PlayerPosition
 
     location: PlayerLocationDTO = field(default_factory=PlayerLocationDTO)

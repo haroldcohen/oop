@@ -18,11 +18,12 @@ class Player(PlayerInterface):
         _id: UUID,
         rider: RiderInterface = NullRider(),
         location: PlayerLocation = PlayerLocation(),
+        position: PlayerPosition = PlayerPosition.STANDING,
     ):
         self._id = _id
         self._rider = rider
         self._location = location
-        self._position = PlayerPosition.SEATING
+        self._position = position
 
     def mount(
         self,
@@ -31,6 +32,7 @@ class Player(PlayerInterface):
     ):
         self._rider = rider
         self._rider.mount(ride=ride)
+        self._position = PlayerPosition.SEATING
 
     def travel(
         self,

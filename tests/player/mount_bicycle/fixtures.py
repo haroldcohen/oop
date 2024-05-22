@@ -4,6 +4,7 @@ from uuid import UUID
 import pytest
 
 from oop.core.domain.player.dto import PlayerDTO
+from oop.core.domain.player.position import PlayerPosition
 from oop.core.domain.player.rider.bicycle.dto import BicycleRiderDTO
 from oop.core.domain.transport.bicycle.dto import BicycleDTO
 
@@ -27,6 +28,7 @@ def expected_player(
     return PlayerDTO(
         id=test_params.player_id,
         rider=expected_bicycle_rider,
+        position=PlayerPosition.SEATING,
     )
 
 
